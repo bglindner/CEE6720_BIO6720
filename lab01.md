@@ -50,7 +50,7 @@ Log into ICE and configure your workspace.
 1.	On your local machine, log on to PACE’s ICE cluster. `ssh username@login-ice.pace.gatech.edu`
 2.  Ensure you have access to the course's shared directory. If when you call `ls` you only see `scratch/` then add our shared directory as a new symlink with `ln`: `ln -s /storage/ice-shared/cee6720 shared`
 3.  Find the data for today's exercise in `shared/lab01/` and copy it into your `scratch` directory using `cp`
-4.  You should have two sets of data, one set for session 1 and one set for session 2.
+4.  You should have two sets of data, one folder containing *Shewanella* data (`shewy_data`) and the other containing 10 genomes (`10genomes/`)
 
 ## **Step 3:** 
 Run BLAST both ways i.e., genes of OS185 => genome of OS195 and then genes of OS195 => genome of OS185. 
