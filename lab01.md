@@ -71,7 +71,7 @@ Filter and visualize the results of both BLAST runs.
 Use `FastANI` to automatically generate ANI values.
 1. Create an environment and install `FastANI` with `conda` or `mamba` (there will be prompts after some of these calls so don't run this as a single block of code):
 ```
-module load anconda3
+module load anaconda3
 conda create -n fastANI
 conda activate fastANI
 conda install -c bioconda fastANI
