@@ -69,7 +69,13 @@ Filter and visualize the results of both BLAST runs.
 
 ## **Step 5:**
 Use `FastANI` to automatically generate ANI values.
-1. Obtain a copy of `FastANI` for your use on ICE by following the information found here: https://github.com/ParBLiSS/FastANI (you'll want the dependency-free binary).
+1. Create an environment and install `FastANI` with `conda` or `mamba` (there will be prompts after some of these calls so don't run this as a single block of code):
+```
+module load anconda3
+conda create -n fastANI
+conda activate fastANI
+conda install -c bioconda fastANI
+```
 2. Use `FastANI` to produce ANI values for OS185:OS195 and OS195:OS185. Pay attention to the tool's documentation -- input to `FastANI` are genomes not genes.
 3. Be sure to include a comparison between the ANI values found manually and by `FastANI` in your final report. Did you observe any differences? If so, why might that be?
 
