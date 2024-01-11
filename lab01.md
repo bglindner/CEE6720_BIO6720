@@ -18,11 +18,11 @@ This exercise is intended to be completed in two class sessions with the followi
 
 •	Review Unix and remote computing basics.
 
-•	Run the BLAST algorithm on the whole genome sequences of the two Shewanella strains. 
+•	Run the BLAST algorithm on the whole genome sequences of the two *Shewanella* strains. 
 
 •	Understand the structure of BLAST tabular outputs and filter alignments appropriately.
 
-•	Manually compute and visualize ANI between the two Shewanella strains from BLAST outputs. 
+•	Manually compute and visualize ANI between the two *Shewanella* strains from BLAST outputs. 
 
 •	Practice using a dedicated tool, fastANI, to compute ANI automatically. 
 
