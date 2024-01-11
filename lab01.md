@@ -76,7 +76,7 @@ conda create -n fastANI
 conda activate fastANI
 conda install -c bioconda fastANI
 ```
-2. Verify installation `fastANI -h`. If you're returning to the step afresh, make sure your environment is activated (seen as the environment name next to your user handle: `(env_name) [username*login-ice]`]. If it isn't, call `conda activate fastANI` to do so.
+2. Verify installation `fastANI -h`. If you're returning to the step afresh, make sure your environment is activated (seen as the environment name next to your user handle: `(env_name) [username@login-ice]`]. If it isn't, call `conda activate fastANI` to do so.
 3. Use `FastANI` to produce ANI values for OS185:OS195 and OS195:OS185. Pay attention to the tool's documentation -- input to `FastANI` are genomes not genes.
 4. Be sure to include a comparison between the ANI values found manually and by `FastANI` in your final report. Did you observe any differences? If so, why might that be?
 
