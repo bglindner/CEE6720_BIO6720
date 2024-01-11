@@ -32,7 +32,7 @@ This exercise is intended to be completed in two class sessions with the followi
 
 # Instructions:
 
-## (Session 1) **Step 1:** 
+## **Step 1:** 
 Review Unix and remote computing basics.
 Please respond to the following before beginning the exercise and include your responses in your final assignment. One to two sentences of response will suffice for each.
 1.	What command does your user use to log into ICE?
@@ -45,14 +45,14 @@ Please respond to the following before beginning the exercise and include your r
 8.  What command cancels a job on a compute node?
 9.  Should I ask the course TA or PACE's helpdesk for software assistance during this course?
 
-## (Session 1) **Step 2:** 
+## **Step 2:** 
 Log into ICE and configure your workspace.
 1.	On your local machine, log on to PACE’s ICE cluster. `ssh username@login-ice.pace.gatech.edu`
 2.  Ensure you have access to the course's shared directory. If when you call `ls` you only see `scratch/` then add our shared directory as a new symlink with `ln`: `ln -s /storage/ice-shared/cee6720 shared`
 3.  Find the data for today's exercise in `shared/lab01/` and copy it into your `scratch` directory using `cp`
 4.  You should have two sets of data, one set for session 1 and one set for session 2.
 
-## (Session 1) **Step 3:** 
+## **Step 3:** 
 Run BLAST both ways i.e., genes of OS185 => genome of OS195 and then genes of OS195 => genome of OS185. 
 1. Request an interactive job from the scheduler. Adjust the following as you see fit: `salloc -N 1 --ntasks-per-node=2 --mem=32G -t 1:00:00`
 2. Review core software modules available with `module avail` and load the most recent version of `blast-plus` with `module load modulename/version-number`. Note: Advance `module avail` with `return` line-by-line and press `q` if you would like to exit `module avail` prematurely. 
@@ -60,20 +60,20 @@ Run BLAST both ways i.e., genes of OS185 => genome of OS195 and then genes of OS
 4. Query the genes of one strain against the genome of the other and then repeat in the other direction. Do so with `blastn`: `blastn -subject genome.fna -query genes.fna -out output.tsv -outfmt 6`
 5. Ensure you have two separate tabular outputs, one for each direction (genes1 => genome2, genes2 => genome1).
 
-## (Session 1) **Step 4:**
+## **Step 4:**
 Filter and visualize the results of both BLAST runs.
 1. Import both tabular outputs as dataframes into the workspace of your choice (e.g., `R`, `jupyter`, Excel, etc.). NEVER copy and paste data from the command line to elsewhere! See the command `scp`, which when called from your local workspace offers a quick solution: `scp username@login-ice.pace.gatech.edu:remote_path/to/file.txt local_path/to/file.txt`. See also dedicated apps like, Globus, MobaXterm, VS Code, etc. 
 2. Ensure that each query **gene** aligns at most to one section of the subject **genome**. In instances of multiple alignments, select the best scoring alignment and remove any secondary alignments. You may script this or do it manually, as you prefer. 
 3. Prepare histograms for each output and compute their mean as ANI.
 4. Be sure to include these histograms in your final report.
 
-## (Session 2) **Step 5:**
+## **Step 5:**
 Use `FastANI` to automatically generate ANI values.
 1. Obtain a copy of `FastANI` for your use on ICE by following the information found here: https://github.com/ParBLiSS/FastANI
 2. Use `FastANI` to produce ANI values for OS185:OS195 and OS195:OS185. Pay attention to the tool's documentation -- input to `FastANI` are genomes not genes.
 3. Be sure to include a comparison between the ANI values found manually and by `FastANI` in your final report. Did you observe any differences? If so, why might that be?
 
-## (Session 2) **Step 6:**
+## **Step 6:**
 Scaling up: examining ANI values for a collection of genomes.
 1. In the data for session 2, you will find 10 genomes (`genome01.fna`,...`genome10.fna`). Using `FastANI` compute the ANI between all genomes. 
 2. Using these ANI values, prepare a similarity matrix. Pay attention to the tool's usage guidelines, there is an optional output parameter that will make this much easier.
