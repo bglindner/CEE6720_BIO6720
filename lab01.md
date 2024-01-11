@@ -83,9 +83,9 @@ Scaling up: examining ANI values for a collection of genomes.
 # Assignment Reporting:
 Email Kostas a lab report. Briefly respond to the following conclusion questions at the end of your report:
 
-7. What are the differences between a FASTA file containing a complete genome sequence and a FASTA file containing just gene sequences?
-8. Compare and contrast the percent identity of a sequence alignment with the concept of ANI?
-9. Both *Shewanella* strains have been observed to carry plasmids. Did the FASTA files for OS185 and OS195 contain only chromosomal DNA or were these plasmids included? Should or should we not include extra-chromosomal elements in ANI calculations?
-10. Say you accidentally and permanently deleted the genomes provided to you for use in this exercise (perhaps through uncautious use of `rm -r`) and that they have also been removed from the `shared` directory. How would you obtain them independently?
-11. What are the column names of a BLAST tabular produced by `-outfmt 6`? 
+1. What are the differences between a FASTA file containing a complete genome sequence and a FASTA file containing just gene sequences?
+2. Compare and contrast the percent identity of a sequence alignment with the concept of ANI?
+3. Both *Shewanella* strains have been observed to carry plasmids. Did the FASTA files for OS185 and OS195 contain only chromosomal DNA or were these plasmids included? Should or should we not include extra-chromosomal elements in ANI calculations?
+4. Say you accidentally and permanently deleted the genomes provided to you for use in this exercise (perhaps through uncautious use of `rm -r`) and that they have also been removed from the `shared` directory. How would you obtain them independently?
+5. What are the column names of a BLAST tabular produced by `-outfmt 6`? 
 6. Approximately, what is the lowest ANI that `FastANI` will report? Why do you think the tool has a lower limit?
