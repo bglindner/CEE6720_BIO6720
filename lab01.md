@@ -57,7 +57,7 @@ Run BLAST both ways i.e., genes of OS185 => genome of OS195 and then genes of OS
 1. Request an interactive job from the scheduler. Adjust the following as you see fit: `salloc -N 1 --ntasks-per-node=2 --mem=32G -t 1:00:00`
 2. Review core software modules available with `module avail` and load the most recent version of `blast-plus` with `module load modulename/version-number`. Note: Advance `module avail` with `return` line-by-line and press `q` if you would like to exit `module avail` prematurely. 
 3. Verify you have access to `blastn` with `blastn -h`. If not, reload the BLAST+ module. 
-4. Query the genes of one strain against the genome of the other and then repeat in the other direction. Do so with `blastn`: `blastn -subject genome.fna -query genes.fna -out output.tsv -outfmt 6`
+4. Query the genes of one strain against the genome of the other and then repeat in the other direction. Do so with `blastn`: `blastn -subject genome.fna -query genes.ffn -out output.tsv -outfmt 6`
 5. Ensure you have two separate tabular outputs, one for each direction (genes1 => genome2, genes2 => genome1).
 
 ## **Step 4:**
