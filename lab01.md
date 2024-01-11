@@ -82,7 +82,7 @@ conda install -c bioconda fastANI
 
 ## **Step 6:**
 Scaling up: examining ANI values for a collection of genomes.
-1. In `10genomes`, you will unsurprisingly find 10 genomes (`genome01.fna`,...`genome10.fna`). Using `FastANI` compute the ANI based on all genomes vs all genomes. 
+1. In `10genomes`, you will unsurprisingly find 10 genomes (`genome01.fna`,...`genome10.fna`). Using `FastANI` compute ANI values for each pair. You can do this individually or provide the tool a list of genomes (i.e., run `FastANI` all vs all). 
 2. Using these ANI values, construct a similarity matrix. Pay attention to the tool's documentation, there is an optional output parameter that could make this much easier.
 3. Cluster the rows and/or columns of your simiarlity matrix and visualize as you would like. Do you observe any clustering patterns? 
 4. Be sure to include a visualization of this similarity matrix in your final report. Also, use this visualization to hypothesize which genomes belong to the same species and/or genus.
