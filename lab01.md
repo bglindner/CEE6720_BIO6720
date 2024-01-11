@@ -64,7 +64,7 @@ Run BLAST both ways i.e., genes of OS185 => genome of OS195 and then genes of OS
 Filter and visualize the results of both BLAST runs.
 1. Import both tabular outputs as dataframes into the workspace of your choice (e.g., `R`, `jupyter`, Excel, etc.). NEVER copy and paste data from the command line to elsewhere! See the command `scp`, which when called from your local workspace offers a quick solution: `scp username@login-ice.pace.gatech.edu:remote_path/to/file.txt local_path/to/file.txt`. See also dedicated apps like, Globus, MobaXterm, VS Code, etc. 
 2. Ensure that each query **gene** aligns at most to one section of the subject **genome**. In instances of multiple alignments, select the best scoring alignment and remove any secondary alignments. You may script this or do it manually, as you prefer. 
-3. Prepare histograms for each output and compute their mean as ANI.
+3. Prepare histograms for each output and compute their mean. This is ANI.
 4. Be sure to include these histograms in your final report.
 
 ## **Step 5:**
