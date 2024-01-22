@@ -65,7 +65,7 @@ Filter and visualize the results of both BLAST runs.
 1. Import both tabular outputs as dataframes into the workspace of your choice (e.g., `R`, `jupyter`, Excel, etc.). NEVER copy and paste data from the command line to elsewhere! See the command `scp`, which when called from your local workspace offers a quick solution: `scp username@login-ice.pace.gatech.edu:remote_path/to/file.txt local_path/to/file.txt`. See also dedicated apps like, Globus, MobaXterm, VS Code, etc. 
 2. Ensure that each query **gene** aligns at most to one section of the subject **genome**. In instances of multiple alignments, select the best scoring alignment and remove any secondary alignments. You may script this or do it manually, as you prefer. 
 3. Prepare histograms for each output and compute their mean. This is ANI.
-4. Be sure to include these histograms in your final report.
+4. Based on this visualizations: report the number of genes shared between the two genomes above 90% and 99.5% identity. Report the one-way and two-way ANIs between this genome pair.
 
 ## **Step 5:**
 Use `FastANI` to automatically generate ANI values.
@@ -91,7 +91,7 @@ Scaling up: examining ANI values for a collection of genomes.
 Email Kostas a lab report. Briefly respond to the following conclusion questions at the end of your report:
 
 1. What are the differences between a FASTA file containing a complete genome sequence and a FASTA file containing just gene sequences?
-2. Please compare and contrast the concept of percent identity of a sequence alignment with the ANI metric.
+2. Please compare and contrast the concept of nucleotide percent identity with the ANI metric.
 3. Both *Shewanella* strains have been observed to carry plasmids. Did the FASTA files for OS185 and OS195 contain only chromosomal DNA or were these plasmids included? Should or should we not include extra-chromosomal elements in ANI calculations?
 4. Say you accidentally and permanently deleted the genomes provided to you for use in this exercise (perhaps through uncautious use of `rm -r`) and that they have also been removed from the `shared` directory. How would you obtain them independently?
 5. What are the column names of a BLAST tabular produced by `-outfmt 6`? 
