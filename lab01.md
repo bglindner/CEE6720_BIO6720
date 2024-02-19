@@ -1,7 +1,7 @@
 # CEE/BIO 6720: Laboratory 1
 ## Exercises on Average Nucleotide Identity (ANI) 
 
-## Preparation (these must be done before class):
+## Preparation (these must be done before class on Feb 26):
 1.	Log in to LinkedIn Learning (using your Gatech credentials) and complete the “Unix Essential Training” course by Kevin Skoglund (https://www.linkedin.com/learning/unix-essential-training/). Budget about 1-2 hours for this and feel free to skip Chapter 6 for now (or any other sections, based on your familiarity with Unix). 
 2.	Much of this course involves remote computing on a cluster with a Unix-based operating system. Please review PACE’s materials on the Instructional Cluster Environment (ICE) where we will be completing most of our laboratory exercises this semester. Please do so even if you are already familiar with other PACE clusters; ICE has some unique features and different computational resources compared to the others (i.e., Phoenix, Hive).
 3.	Configure a working terminal on your system. MacOS users have a native terminal. Windows users can quickly obtain a standalone and lightweight terminal via MobaXterm (https://mobaxterm.mobatek.net/). 
