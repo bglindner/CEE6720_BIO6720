@@ -24,7 +24,7 @@ These exercises will also acquaint users with `sbatch` jobs and utilizing shared
 
 •	Step 3: Assess and visualize beta diversity with `simka`
 
-•	Step 4: Create taxonomic profiles for all samples based on 16S sequence fragments (`vsearch` and `silva`) or all short reads (`kraken2`)
+•	Step 4: Create taxonomic profiles for all samples based on 16S sequence fragments (`vsearch` and `silva`) and/or all short reads (`kraken2`)
 
 •	Compare samples between years (2010, 2012, 2014) and seasons (summer and winter)
 
