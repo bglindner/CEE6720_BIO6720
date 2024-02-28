@@ -71,7 +71,7 @@ Now that we've set up our working directory and installed the needed software, l
 5.  Ensure you have all of the expected outputs: trimmed reads (forward and reverse), `.html`, and `.json`.
 6.  You should download the `.html` outputs for each set of paired reads and open a few locally (with Chrome or Firefox) for a nice visual summary of each metagenome's quality.
 
-## **Step 2:** 
+## **Step 2: Assessing alpha diversity** 
 With our short reads successfully trimmed, let's assess nucleotide diversity with `nonpareil`. We'll run the tool and then take its outputs into `R` to quickly produce a visual and summary dataframe.
 1.  As you did for step 1, run `step02.sbatch` according to its usage instructions.
 2.  While your jobs run, prepare a `manifest.tsv` dataframe for your samples which we'll use with `nonpareil` below. It should have this format:
@@ -112,7 +112,7 @@ dev.off()
 ```
 4.  Transfer both `nonpareil_results.csv` and `nonpareil_curves.pdf` to your local workspace. 
 
-## **Step 3:**
+## **Step 3: Assessing beta diversity**
 Assessing beta diversity
 
 1.  Similarly to `nonpareil`, we want to prepare a table for use by `simka`. In this case, we need this table before running `simka`, so let's prepare it like so (note the lack of headers and use only spaces for whitespace here):
@@ -124,7 +124,7 @@ sampleC: path/to/sampleC.1.fastq ; path/to/sampleC.2.fastq
 2.  Similarly to steps 1 and 2, launch `simka` with its own batch script (`step03.sbatch`). This will process the entire dataset as a batch, so you only need to launch this once.
 3.  Collect PCA plots from the output folder and transfer them to your local workspace. 
 
-## **Step 5:**
+## **Step 5: Profiling taxonomic composition**
 Taxonomic profiling.
 
 Under construction
