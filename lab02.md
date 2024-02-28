@@ -117,7 +117,8 @@ sampleC: path/to/sampleC.1.fastq ; path/to/sampleC.2.fastq
 
 ## **Step 5:**
 Extract and classify 16S sequences 
-1.  Configure your copy of `step04.sbatch`
+
+Under construction
 
 ## Discussion
 
