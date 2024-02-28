@@ -1,19 +1,18 @@
 # CEE/BIO 6720: Laboratory 2
 ## Comparative metagenomics with short reads (part 1)
 
-Comparing the composition of metagenomic datasets across nucleotide and ecological diversities. 
 
 ## Purpose: 
 
-Six metagenomic datasets recovered from timeseries monitoring of a freshwaster lake have been provided, which were captured during the winter and summer of 2010, 2012, and 2014. We will assess high level differences between the compositions of these samples. 
+In this exercise, we'll be comparing the composition of metagenomic datasets across nucleotide and ecological diversities. Six metagenomic datasets recovered from timeseries monitoring of a freshwaster lake have been provided, which were captured during the winter and summer of 2010, 2012, and 2014. 
 
-Short read datasets have dominated metagenomic studies for almost two decades. A substantial amount of information can be extracted from short read datasets without the need to assemble (or provide longer readers from other platforms). The goal of this exercise is to acquaint users with basic comparative metagenomic worklows utilizing only short reads. The aim is to review:
+Short read datasets have dominated metagenomic studies for almost two decades. A substantial amount of information can be extracted from short read datasets without the need to assemble (or provide longer readers from other platforms). The goal of this exercise is to acquaint users with basic comparative metagenomic worklows utilizing only short reads. The aim is to provide a short overview of easy methods for :
 
-1. Alpha diversity (`nonpareil`)
-2. Beta diversity (`simka`)
+1. Assessing alpha diversity (`nonpareil`)
+2. Assessing beta diversity (`simka`)
 3. Taxonomic profiling with both 16S fragments (`vsearch` + `silva`) and k-mers (`kraken2`)
 
-These exercises will also acquaint users with `sbatch` jobs and utilizing shared databases for database-dependent tools.
+These exercises will also acquaint users with `sbatch` jobs and utilizing shared databases for database-dependent tools. 
 
 ## Outline: 
 
