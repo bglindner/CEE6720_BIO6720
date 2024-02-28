@@ -116,7 +116,7 @@ Extract and classify 16S sequences
 
 In your laboratory report, please provide:
    
-•	both the summary table and `nonpareil` curve visualization
+•	both the `nonpareil` summary table and visualized curves.
   
 •	the Bray-Curtis PCoA visual produced by `simka`
     
