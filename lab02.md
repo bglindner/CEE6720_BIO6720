@@ -6,7 +6,7 @@
 
 In this exercise, we'll be comparing the composition of metagenomic datasets across nucleotide, ecological, and taxonomic diversities. Six metagenomic datasets recovered from timeseries monitoring of a freshwaster lake have been provided, which were captured during the winter and summer of 2010, 2012, and 2014. 
 
-Short read datasets have dominated metagenomic studies for almost two decades. A substantial amount of information can be extracted from short read datasets without the need to assemble (or provide longer readers from other platforms). The goal of this exercise is to acquaint users with basic comparative metagenomic worklows utilizing only short reads. The aim is to provide a short overview of easy methods for basic steps in comparative metagenomic workflows:
+Short read datasets have dominated metagenomic studies for almost two decades. A substantial amount of information can be extracted from short read datasets without the need to assemble (or provide longer readers from other platforms). The goal of this exercise is to acquaint users with simple worklows utilizing only short reads with the aim to provide a short overview of easy methods for basic steps involved in comparative metagenomics:
 
 1. Assessing alpha diversity (`nonpareil`)
 2. Assessing beta diversity (`simka`)
