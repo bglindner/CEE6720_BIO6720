@@ -91,14 +91,19 @@ library("Nonpareil")
 # make sure your working directory is where you think it is!
 getwd()
 # you should be in your ~/scratch/lab02 direcory.
+
+### generate plots
 manifest = read.table(file="manifest.tsv",header=TRUE)
 files = as.character(manifest$files)
 labels= as.character(manifest$labels)
 colors= as.character(manifest$colors)
 curves = Nonpareil.set(files,colors,labels,plot.opts=list(plot.diversity=FALSE))
+
+### extract summary info and write to CSV
 info = summary.Nonpareil.Set(curves)
 write.csv(info, "nonpareil_results.csv", row.names=FALSE)
 
+### write plots to PDF
 pdf("nonpareil_curves.pdf", width=12, height=6)
 Nonpareil.set(files,colors,labels,plot.opts=list(plot.diversity=FALSE))
 dev.off()
