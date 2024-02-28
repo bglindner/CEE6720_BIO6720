@@ -143,6 +143,7 @@ Please respond to the following at the end of your report:
 
 1.  List the names of the tools we used in this exercise and a link to their documentation.
 2.  Briefly: What is the method `nonpareil` uses to estimate alpha diversity (and a metagenomic samples coverage of it)? What is the method `simka` uses to estimate beta diversity?
-3.  Regardless of which tool(s) you opted to run, what is the difference between the approaches we used with `vsearch` and `kraken2` for generating taxonomic profiles?
-4.  Do you observe any trends between the winter and summer samples? What about across years? Please describe your answer and highlight visualizations to support your conclusions, as necessary.  
+3.  Researchers involved in this study would like to ensure future sequencing runs capture >=75% of the expected nucleotide diversity for both summer and winter samples. What sequencing effort (in GB) would you recommend to accomplish this? Does seasonality have any impact on your suggestions?
+4.  Regardless of which tool(s) you opted to run, what is the difference between the approaches we used with `vsearch` and `kraken2` for generating taxonomic profiles?
+5.  Do you observe any trends between the winter and summer samples? What about across years? Please describe your answer and highlight visualizations to support your conclusions, as necessary.  
 
