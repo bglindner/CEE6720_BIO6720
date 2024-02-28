@@ -11,20 +11,29 @@
 * kraken2
 
 ## Purpose: 
-Short read datasets have dominated metagenomic studies for almost two decades. A substantial amount of information can be extracted from short read datasets without the need to assemble (or provide longer readers from other platforms). The goal of this exercise is to acquaint users with basic comparative metagenomic worklows utilizing only short reads. The aim is to review
+
+Six metagenomic datasets recovered from timeseries monitoring of a freshwaster lake have been provided, which were captured during the winter and summer of 2010, 2012, and 2014. We will assess high level differences between the compositions of these samples. 
+
+Short read datasets have dominated metagenomic studies for almost two decades. A substantial amount of information can be extracted from short read datasets without the need to assemble (or provide longer readers from other platforms). The goal of this exercise is to acquaint users with basic comparative metagenomic worklows utilizing only short reads. The aim is to review:
+
 1. Alpha diversity (`nonpareil`)
 2. Beta diversity (`simka`)
 3. Taxonomic profiling with both 16S fragments (`vsearch` + `silva`) and k-mers (`kraken2`)
 
-Six metagenomic datasets recovered from timeseries monitoring of a freshwaster lake have been provided, which were captured during the winter and summer of 2010, 2012, and 2014. We will assess high level differences between the compositions of these samples. 
+These exercises will also acquaint users with `sbatch` jobs and utilizing shared databases for database-dependent tools.
 
 ## Outline: 
 
-•	Copy raw metagenomic reads from `shared/lab02`
+•	Step 0: Set up your workspace and retrieve software.
+
 •	Step 1: Trim raw reads with `fastp`
+
 •	Step 2: Assess and visualize alpha diversity with `nonpareil`
+
 •	Step 3: Assess and visualize beta diversity with `simka`
+
 •	Step 4: Create taxonomic profiles for all samples based on 16S sequence fragments (`vsearch` and `silva`) or all short reads (`kraken2`)
+
 •	Compare samples between years (2010, 2012, 2014) and seasons (summer and winter)
 
 # Instructions:
