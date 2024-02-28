@@ -92,7 +92,7 @@ R
 
 library("Nonpareil")
 getwd()
-# you should be in your ~/scratch/lab02 directory. If not, consider setwd() or exit R and cd there before beginning again. 
+# you should be in your ~/scratch/lab02 directory. If not, consider setwd() or exit R and cd there
 
 ### generate plots
 manifest = read.table(file="manifest.tsv",header=TRUE)
