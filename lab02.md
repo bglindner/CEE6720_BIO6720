@@ -60,7 +60,6 @@ micromamba install fastp kraken2 nonpareil simka vsearch
 ```
 micromamba clean --all -y
 ```
-6.  Let's get started!
 
 ## **Step 1: Read trimming** 
 Now that we've set up our working directory and installed the needed software, let's start with our first step: read trimming. This is a quality control step designed to ensure that the sequences (reads) we use in subsequent steps have high quality base calls, are devoid of any adapter sequences, etc.
