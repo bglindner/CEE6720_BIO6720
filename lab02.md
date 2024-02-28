@@ -123,7 +123,7 @@ sampleC: path/to/sampleC.1.fastq ; path/to/sampleC.2.fastq
 2.  Similarly to steps 1 and 2, launch `simka` with its own batch script (`step03.sbatch`). This will process the entire dataset as a batch, so you only need to launch this once.
 3.  Collect PCA plots from the output folder and transfer them to your local workspace. 
 
-## **Step 5: Profiling taxonomic composition**
+## **Step 4: Profiling taxonomic composition**
 Taxonomic profiling.
 
 Under construction
