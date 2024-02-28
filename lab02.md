@@ -48,7 +48,7 @@ channels:
   - defaults
 channel_priority: flexible
 ```
-3.  Copy `shared/lab02` to your `scratch` directory
+3.  Copy `shared/lab02` to your `scratch` directory (`cp -r ~/shared/lab02 ~/scratch/`)
 4.  Create an environment with the software we need:
 ```
 # if your command line can't recognize micromamba, try: source ~/.bashrc
@@ -64,18 +64,17 @@ micromamba clean --all -y
 
 ## **Step 1: Read trimming** 
 Now that we've set up our working directory and installed the needed software, let's start with our first step: read trimming. This is a quality control step designed to ensure that the sequences (reads) we use in subsequent steps have high quality base calls, are devoid of any adapter sequences, etc.
-1.  Configure your copy of `step01.sbatch`
-2.  Launch `fastp` from your `sbatch` script providing the forward and reverse raw reads. You can pass in variables to `sbatch` calls using a comma-delimited list: `sbatch --export var1=string,var2=string script.sbatch` (You'll need to do this 6 times, one for each metagenomic read pair!)
+1.  Take a look inside the `sbatch` script provided for the first step (`step01.sbatch`). If you've made an exact copy of the `lab02` data from `shared` and installed the software in an environment therein called `env`, you should be able to get right to work.
+2.  Run `step01.sbatch`. See usage guides inside the scropt (`cat step01.sbatch`) . You'll need to launch this step 6 times, one for each metagenomic read pair!
 3.  Monitor the job IDs you are given. You can examine your account's running jobs with: `squeue -u username`
 4.  Pay attention to any failed jobs -- clean them up as you need to and re-launch jobs.
 5.  Ensure you have all of the expected outputs: trimmed reads (forward and reverse), `.html`, and `.json`.
-6.  You can download the `.html` outputs for each set of paired reads and open it locally (with Chrome or Firefox) for a nice visual summary of your metagenome's quality.
+6.  You should download the `.html` outputs for each set of paired reads and open a few locally (with Chrome or Firefox) for a nice visual summary of each metagenome's quality.
 
 ## **Step 2:** 
 With our short reads successfully trimmed, let's assess nucleotide diversity with `nonpareil`. We'll run the tool and then take its outputs into `R` to quickly produce a visual and summary dataframe.
-1.  Configure your copy of the `step02.sbatch`
-2.  Launch and monitor jobs as you did for step 1. `nonpareil` will output several files, which we will need the `.npo` file specifically. 
-3.  While your jobs run, prepare a `manifest.tsv` dataframe for your samples which we'll use with `nonpareil` below. It should have this format:
+1.  As you did for step 1, run `step02.sbatch` according to its usage instructions.
+2.  While your jobs run, prepare a `manifest.tsv` dataframe for your samples which we'll use with `nonpareil` below. It should have this format:
 ```
 files	labels	colors
 path/to/sample1.npo	sample1	color1
@@ -83,24 +82,28 @@ path/to/sample2.npo	sample2	color1
 path/to/sample3.npo	sample3	color2
 path/to/sample4.npo	sample4	color2
 ```
-Note: be careful copy+pasting this -- it's better to re-create it yourself so that you know the whitespace is properly formatted as tabs. Keep the header names the same.
-4.  Once your nonpareil jobs are finished, we can read our information in to `R`:
+Note: be careful copy+pasting this -- it's better to re-create it yourself so that you know the whitespace is properly formatted as tabs. Keep the header names the same. You can use this opporunity to pick colors for your samples, to color them either individually or by group (i.e. season or year).
+3.  Once your nonpareil jobs are finished, we can read our information in to `R`:
 ```
-module load R
+micromamba activate ./env
 R
+library("Nonpareil")
 # make sure your working directory is where you think it is!
 getwd()
-#
+# you should be in your ~/scratch/lab02 direcory.
 manifest = read.table(file="manifest.tsv",header=TRUE)
 files = as.character(manifest$files)
 labels= as.character(manifest$labels)
 colors= as.character(manifest$colors)
-library("Nonpareil")
-curves = Nonpareil.set(files,colors,labels,plot.opts=list(plot.diversity=False))
-pdf(curves, width=8, height=6)
+curves = Nonpareil.set(files,colors,labels,plot.opts=list(plot.diversity=FALSE))
 info = summary.Nonpareil.Set(curves)
 write.csv(info, "nonpareil_results.csv", row.names=FALSE)
+
+pdf("nonpareil_curves.pdf", width=12, height=6)
+Nonpareil.set(files,colors,labels,plot.opts=list(plot.diversity=FALSE))
+dev.off()
 ```
+4.  Transfer both `nonpareil_results.csv` and `nonpareil_curves.pdf` to your local workspace. 
 
 ## **Step 3:**
 Assessing beta diversity
