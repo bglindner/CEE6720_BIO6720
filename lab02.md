@@ -144,5 +144,5 @@ Please respond to the following at the end of your report:
 1.  List the names of the tools we used in this exercise and a link to their documentation.
 2.  Briefly: What is the method `nonpareil` uses to estimate alpha diversity (and a metagenomic samples coverage of it)? What is the method `simka` uses to estimate beta diversity?
 3.  Regardless of which tool(s) you opted to run, what is the difference between the approaches we used with `vsearch` and `kraken2` for generating taxonomic profiles?
-4.  Do you observe any trends between the winter and summer samples? What about across years? Please describe your answer and highlight the visualizations you produced to support your conclusions as necessary.  
+4.  Do you observe any trends between the winter and summer samples? What about across years? Please describe your answer and highlight visualizations to support your conclusions, as necessary.  
 
