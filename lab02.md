@@ -113,19 +113,18 @@ dev.off()
 
 ## **Step 3:**
 Assessing beta diversity
-Filter and visualize the results of both BLAST runs.
-1.  Configure your copy of `step03.sbatch`
-2.  Similarly to `nonpareil`, we want to prepare a table for use by `simka`. In this case, we need this table before running `simka`, so let's prepare it like so (note the lack of headers and use only spaces for whitespace here):
+
+1.  Similarly to `nonpareil`, we want to prepare a table for use by `simka`. In this case, we need this table before running `simka`, so let's prepare it like so (note the lack of headers and use only spaces for whitespace here):
 ```
 sampleA: path/to/sampleA.1.fastq ; path/to/sampleA.2.fastq
 sampleB: path/to/sampleB.1.fastq ; path/to/sampleB.2.fastq
 sampleC: path/to/sampleC.1.fastq ; path/to/sampleC.2.fastq
 ```
-3.  Launch `simka` with your `sbatch` script providing the input file prepared above.
-4.  Collect Bray-Curtis PCoA visuals from the output folder.
+2.  Similarly to steps 1 and 2, launch `simka` with its own batch script (`step03.sbatch`). This will process the entire dataset as a batch, so you only need to launch this once.
+3.  Collect PCA plots from inside the output folder and transfer them to your local workspace. 
 
 ## **Step 5:**
-Extract and classify 16S sequences 
+Taxonomic profiling.
 
 Under construction
 
