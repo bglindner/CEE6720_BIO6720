@@ -10,7 +10,7 @@ Short read datasets have dominated metagenomic studies for almost two decades. A
 
 1. Assessing alpha diversity (`nonpareil`)
 2. Assessing beta diversity (`simka`)
-3. Taxonomic profiling with both 16S fragments (`vsearch` + `silva`) and k-mers (`kraken2`)
+3. Taxonomic profiling with both 16S fragments (`vsearch` + `silva`) and *k*-mers (`kraken2`)
 
 These exercises will also acquaint users with `sbatch` jobs and utilizing shared databases for database-dependent tools. 
 
