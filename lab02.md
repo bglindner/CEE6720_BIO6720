@@ -60,16 +60,16 @@ micromamba install fastp kraken2 nonpareil simka vsearch
 
 ## **Step 1: Read trimming** 
 Now that we've set up our working directory and installed the needed software, let's start with our first step: read trimming. This is a quality control step designed to ensure that the sequences (reads) we use in subsequent steps have high quality base calls, are devoid of any adapter sequences, etc.
-1.  Configure your copy of the `sbatch` script `00_qc_fastp.sbatch`
-2.  Launch `fastp` from your `sbatch` script providing the forward and reverse raw reads. You can pass in variables to `sbatch` calls using a comma-delimited list: `sbatch --export var1=string,var2=string script.sbatch`
-3.  Monitor the job IDs you are given for completion. You can examine your account's running jobs with: `squeue -u username`
+1.  Configure your copy of `step01.sbatch`
+2.  Launch `fastp` from your `sbatch` script providing the forward and reverse raw reads. You can pass in variables to `sbatch` calls using a comma-delimited list: `sbatch --export var1=string,var2=string script.sbatch` (You'll need to do this 6 times, one for each metagenomic read pair!)
+3.  Monitor the job IDs you are given. You can examine your account's running jobs with: `squeue -u username`
 4.  Pay attention to any failed jobs -- clean them up as you need to and re-launch jobs.
 5.  Ensure you have all of the expected outputs: trimmed reads (forward and reverse), `.html`, and `.json`.
 6.  You can download the `.html` outputs for each set of paired reads and open it locally (with Chrome or Firefox) for a nice visual summary of your metagenome's quality.
 
 ## **Step 2:** 
 With our short reads successfully trimmed, let's assess nucleotide diversity with `nonpareil`. We'll run the tool and then take its outputs into `R` to quickly produce a visual and summary dataframe.
-1.  Configure your copy of the `sbatch script` 01_a-div_nonpareil.sbatch`
+1.  Configure your copy of the `step02.sbatch`
 2.  Launch and monitor jobs as you did for step 1. `nonpareil` will output several files, which we will need the `.npo` file specifically. 
 3.  While your jobs run, prepare a `manifest.tsv` dataframe for your samples which we'll use with `nonpareil` below. It should have this format:
 ```
@@ -101,23 +101,28 @@ write.csv(info, "nonpareil_results.csv", row.names=FALSE)
 ## **Step 3:**
 Assessing beta diversity
 Filter and visualize the results of both BLAST runs.
-1.  Configure your copy of the `sbatch script` 01_b-div_simka.sbatch`
-2.  Prepare a text file listing the input files and their sample IDs for use by `simka`
+1.  Configure your copy of `step03.sbatch`
+2.  Similarly to `nonpareil`, we want to prepare a table for use by `simka`. In this case, we need this table before running `simka`, so let's prepare it like so:
+```
+```   
 3.  Launch `simka` with your `sbatch` script providing the input file prepared in step 2.
 4.  Collect Bray-Curtis PCoA visuals from the output folder.
 
 ## **Step 5:**
 Extract and classify 16S sequences 
-1. 
+1.  Configure your copy of `step04.sbatch`
 
-## **Step 6:**
+## Discussion
 
-1. In `10genomes`, you will unsurprisingly find 10 genomes (`genome01.fna`,...`genome10.fna`). Using `FastANI` compute ANI values for each pair. You can do this individually or provide the tool a list of genomes (i.e., run `FastANI` all vs all). 
-2. Using these ANI values, construct a similarity matrix. Pay attention to the tool's documentation, there is an optional output parameter that could make this much easier.
-3. Cluster the rows and/or columns of your simiarlity matrix and visualize as you would like. Do you observe any clustering patterns? 
-4. Be sure to include a visualization of this similarity matrix in your final report. Also, use this visualization to hypothesize which genomes belong to the same species and/or genus.
+In your laboratory report, please provide:
+    *  both the summary table and `nonpareil` curve visualization
+    *  the Bray-Curtis PCoA visual produced by `simka`
+    *  a taxonomic profile for the entire dataset based on 16S data or all short reads.
 
-# Assignment Reporting:
-Email Kostas a lab report. Briefly respond to the following conclusion questions at the end of your report:
+Please respond to the following at the end of your report:
 
-1. 
+1.  List the names of the tools we used in this exercise and a link to their documentation.
+2.  Briefly: What is the method `nonpareil` uses to estimate alpha diversity (and a metagenomic samples coverage of it)? What is the method `simka` uses to estimate beta diversity?
+3.  Regardless of which tool(s) you opted to run, what is the difference between the approaches we used with `vsearch` and `kraken2` for generating taxonomic profiles?
+4.  Do you observe any trends between the winter and summer samples? What about across years? Please describe your answer and highlight the visualizations you produced to support your conclusions as necessary.  
+
