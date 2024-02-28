@@ -30,8 +30,8 @@ These exercises will also acquaint users with `sbatch` jobs and utilizing shared
 
 # Instructions:
 
-## **Step 0:** 
-Set up your workspace:
+## **Step 0: Workspace preparation** 
+
 1.  Install `micromamba`:
 ```
 curl -Ls https://micro.mamba.pm/api/micromamba/osx-64/latest | tar -xvj bin/micromamba
