@@ -1,5 +1,7 @@
 # CEE/BIO 6720: Laboratory 2
-## Comparative metagenomics with short reads
+## Comparative metagenomics with short reads (part 1)
+
+Comparing the composition of metagenomic datasets across nucleotide and ecological diversities. 
 
 ## Purpose: 
 
