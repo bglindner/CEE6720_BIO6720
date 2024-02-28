@@ -65,7 +65,7 @@ micromamba clean --all -y
 ## **Step 1: Read trimming** 
 Now that we've set up our working directory and installed the needed software, let's start with our first step: read trimming. This is a quality control step designed to ensure that the sequences (reads) we use in subsequent steps have high quality base calls, are devoid of any adapter sequences, etc.
 1.  Take a look inside the `sbatch` script provided for the first step (`step01.sbatch`). If you've made an exact copy of the `lab02` data from `shared` and installed the software in an environment therein called `env`, you should be able to get right to work.
-2.  Run `step01.sbatch`. See usage guides inside the scropt (`cat step01.sbatch`) . You'll need to launch this step 6 times, one for each metagenomic read pair!
+2.  Run `step01.sbatch`. See usage guides inside the script itself (`cat step01.sbatch`) . You'll need to launch this step 6 times, one for each metagenomic read pair.
 3.  Monitor the job IDs you are given. You can examine your account's running jobs with: `squeue -u username`
 4.  Pay attention to any failed jobs -- clean them up as you need to and re-launch jobs.
 5.  Ensure you have all of the expected outputs: trimmed reads (forward and reverse), `.html`, and `.json`.
