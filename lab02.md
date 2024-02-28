@@ -128,7 +128,7 @@ Taxonomic profiling.
 
 Under construction
 
-## Discussion
+# Discussion
 
 In your laboratory report, please provide:
    
