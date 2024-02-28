@@ -1,15 +1,6 @@
 # CEE/BIO 6720: Laboratory 2
 ## Comparative metagenomics with short reads
 
-## Preparation (these must be done before class on Feb 26):
-1.  Review the meaning of alpha and beta diversity. 
-2.  Briefly familiarize yourself with the documentation and usage guidelines for the following tools/databases:
-* fastp
-* nonpareil
-* simka
-* vsearch
-* kraken2
-
 ## Purpose: 
 
 Six metagenomic datasets recovered from timeseries monitoring of a freshwaster lake have been provided, which were captured during the winter and summer of 2010, 2012, and 2014. We will assess high level differences between the compositions of these samples. 
@@ -64,16 +55,16 @@ micromamba create -p ~/scratch/lab02/env
 micromamba activate ~/scratch/lab02/env
 micromamba install fastp kraken2 nonpareil simka vsearch
 ```
+5.  Let's get started!
 
-...
-
-## **Step 1:** 
+## **Step 1: Read trimming** 
 Now that we've set up our working directory and installed the needed software, let's start with our first step: read trimming. This is a quality control step designed to ensure that the sequences (reads) we use in subsequent steps have high quality base calls, are devoid of any adapter sequences, etc.
 1.  Configure your copy of the `sbatch` script `00_qc_fastp.sbatch`
 2.  Launch `fastp` from your `sbatch` script providing the forward and reverse raw reads. You can pass in variables to `sbatch` calls using a comma-delimited list: `sbatch --export var1=string,var2=string script.sbatch`
 3.  Monitor the job IDs you are given for completion. You can examine your account's running jobs with: `squeue -u username`
 4.  Pay attention to any failed jobs -- clean them up as you need to and re-launch jobs.
 5.  Ensure you have all of the expected outputs: trimmed reads (forward and reverse), `.html`, and `.json`.
+6.  You can download the `.html` outputs for each set of paired reads and open it locally (with Chrome or Firefox) for a nice visual summary of your metagenome's quality.
 
 ## **Step 2:** 
 With our short reads successfully trimmed, let's assess nucleotide diversity with `nonpareil`. We'll run the tool and then take its outputs into `R` to quickly produce a visual and summary dataframe.
@@ -105,7 +96,6 @@ pdf(curves, width=8, height=6)
 info = summary.Nonpareil.Set(curves)
 write.csv(info, "nonpareil_results.csv", row.names=FALSE)
 ```
-
 
 ## **Step 3:**
 Assessing beta diversity
