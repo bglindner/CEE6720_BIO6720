@@ -105,7 +105,7 @@ curves= Nonpareil.set(files,colors,labels)
 info = summary.Nonpareil.Set(curves)
 write.csv(info, "nonpareil_results.csv", row.names=FALSE)
 
-### write plots to PDF
+### write plot to PDF
 pdf("nonpareil_curves.pdf", width=12, height=6)
 Nonpareil.set(files,colors,labels,plot.opts=list(plot.diversity=FALSE))
 dev.off()
@@ -122,7 +122,7 @@ sampleB: path/to/sampleB.1.fastq ; path/to/sampleB.2.fastq
 sampleC: path/to/sampleC.1.fastq ; path/to/sampleC.2.fastq
 ```
 2.  Similarly to steps 1 and 2, launch `simka` with its own batch script (`step03.sbatch`). This will process the entire dataset as a batch, so you only need to launch this once.
-3.  Collect PCA plots from inside the output folder and transfer them to your local workspace. 
+3.  Collect PCA plots from the output folder and transfer them to your local workspace. 
 
 ## **Step 5:**
 Taxonomic profiling.
@@ -135,7 +135,7 @@ In your laboratory report, please provide:
    
 •	both the `nonpareil` summary table and visualized curves.
   
-•	the Bray-Curtis PCoA visual produced by `simka`
+•	the Bray-Curtis PCA produced by `simka`
     
 •	a taxonomic profile for the entire dataset based on 16S data or all short reads.
 
