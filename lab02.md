@@ -85,12 +85,13 @@ path/to/sample4.npo	sample4	color2
 Note: be careful copy+pasting this -- it's better to re-create it yourself so that you know the whitespace is properly formatted as tabs. Keep the header names the same. You can use this opporunity to pick colors for your samples, to color them either individually or by group (i.e. season or year).
 3.  Once your nonpareil jobs are finished, we can read our information in to `R`:
 ```
-micromamba activate ./env
+# make sure your environment is active. If needed: micromamba activate ./env
+
 R
+
 library("Nonpareil")
-# make sure your working directory is where you think it is!
 getwd()
-# you should be in your ~/scratch/lab02 direcory.
+# you should be in your ~/scratch/lab02 directory. If not, consider setwd() or exit R and cd there before beginning again. 
 
 ### generate plots
 manifest = read.table(file="manifest.tsv",header=TRUE)
