@@ -115,8 +115,11 @@ Extract and classify 16S sequences
 ## Discussion
 
 In your laboratory report, please provide:
+   
     *  both the summary table and `nonpareil` curve visualization
+  
     *  the Bray-Curtis PCoA visual produced by `simka`
+    
     *  a taxonomic profile for the entire dataset based on 16S data or all short reads.
 
 Please respond to the following at the end of your report:
