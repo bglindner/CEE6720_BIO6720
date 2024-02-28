@@ -98,7 +98,7 @@ manifest = read.table(file="manifest.tsv",header=TRUE)
 files = as.character(manifest$files)
 labels= as.character(manifest$labels)
 colors= as.character(manifest$colors)
-curves = Nonpareil.set(files,colors,labels,plot.opts=list(plot.diversity=FALSE))
+curves= Nonpareil.set(files,colors,labels,plot.opts=list(plot.diversity=FALSE))
 
 ### extract summary info and write to CSV
 info = summary.Nonpareil.Set(curves)
