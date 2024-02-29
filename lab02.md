@@ -124,9 +124,10 @@ sampleC: path/to/sampleC.1.fastq ; path/to/sampleC.2.fastq
 3.  Collect PCA plots from the output folder and transfer them to your local workspace. 
 
 ## **Step 4: Profiling taxonomic composition**
-Taxonomic profiling.
+We would like to create taxonomic profiles for our samples as part of our last step. Below, you have the option of creating profiles using either 16S fragments or all short reads. But you're also welcome to do both and compare the results if you would like.
 
-Under construction
+1. Based on your workflow preference, review the associated script (either `step04_vsearch.sbatch` or `step04_kraken2.sbatch`). Both workflows will generate output files as either a matrix (`vsearch`) or a long format dataframe (`kraken2`).
+2. Process the resulting file and summarize relative abundance at the level of Class for each sample. Create stacked barplots for each sample as part of an associated visual for your lab report.
 
 # Discussion
 
@@ -143,6 +144,6 @@ Please respond to the following at the end of your report:
 1.  List the names of the tools we used in this exercise and a link to their documentation.
 2.  Briefly: What is the method `nonpareil` uses to estimate alpha diversity (and a metagenomic samples coverage of it)? What is the method `simka` uses to estimate beta diversity?
 3.  Researchers involved in this study would like to ensure future sequencing runs capture >=75% of the expected nucleotide diversity for both summer and winter samples. What sequencing effort (in GB) would you recommend to accomplish this? Does seasonality have any impact on your suggestions?
-4.  Regardless of which tool(s) you opted to run, what is the difference between the approaches we used with `vsearch` and `kraken2` for generating taxonomic profiles?
-5.  Do you observe any trends between the winter and summer samples? What about across years? Please describe your answer and highlight visualizations to support your conclusions, as necessary.  
+4.  Regardless of which tool(s) you opted to run, what is the difference between the approaches we used with `vsearch` and `kraken2` for generating taxonomic profiles? Would you expect differences in their results?
+6.  Do you observe any trends between the winter and summer samples? What about across years? Please describe your answer and highlight visualizations to support your conclusions, as necessary.  
 
