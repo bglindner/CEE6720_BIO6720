@@ -134,7 +134,7 @@ In your laboratory report, please provide:
    
 •	both the `nonpareil` summary table and visualized curves.
   
-•	the Bray-Curtis PCA produced by `simka`
+•	the "Abundance" Bray-Curtis PCA produced by `simka` (and any visual results from the tool which you liked)
     
 •	a taxonomic profile for the entire dataset based on 16S data or all short reads.
 
