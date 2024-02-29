@@ -112,7 +112,7 @@ dev.off()
 4.  Transfer both `nonpareil_results.csv` and `nonpareil_curves.pdf` to your local workspace. 
 
 ## **Step 3: Assessing beta diversity**
-Assessing beta diversity
+We also want to examine trends in beta diversity between all samples. We'll prepare an input file for batch processing of all our samples at once (since we're examining beta diversity, this makes sense), hand it off to `simka` which will estimate distances between samples according to several ecological indices and do some dimensionality reductions for us to visualize it. 
 
 1.  Similarly to `nonpareil`, we want to prepare a table for use by `simka`. In this case, we need this table before running `simka`, so let's prepare it like so (note the lack of headers and use only spaces for whitespace here):
 ```
