@@ -34,7 +34,7 @@ These exercises will also acquaint users with `sbatch` jobs and utilizing shared
 
 1.  Install `micromamba`:
 ```
-curl -Ls https://micro.mamba.pm/api/micromamba/osx-64/latest | tar -xvj bin/micromamba
+curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
 ~/bin/micromamba shell init -s bash -p ~/micromamba
 source ~/.bashrc
 # ensure you have it working:
