@@ -123,14 +123,23 @@ sampleC: path/to/sampleC.1.fastq ; path/to/sampleC.2.fastq
 3.  Collect PCA plots from the output folder and transfer them to your local workspace. 
 
 ## **Step 4: Profiling taxonomic composition**
-We would like to create taxonomic profiles for our samples as part of this last step. Below, we will create taxonomic profiles from either 16S fragments or all short reads. Our approach using all the short reads involves the tool `kraken2` which uses a large whole genome database whereas our 16S approach uses `vsearch` to find reads containing 16S sequences by comparing reads to the `SILVA` (SSU) database. Both of these approaches generate tables which you will need to manage in order to generate visuals.
+We would like to create taxonomic profiles for our samples as part of this last step. Below, we will create taxonomic profiles from either 16S fragments or all short reads. Our approach using all the short reads involves the tool `kraken2` which uses a large whole genome database whereas our 16S approach uses `vsearch` to find reads containing 16S sequences by comparing reads to the `SILVA` (SSU) database (akin to "closed or reference-based OTU picking"). Both of these approaches generate tables which you will need to manage in order to generate visuals.
 
 1. Review the associated scripts ( `step04_vsearch.sbatch` or `step04_kraken2.sbatch`). Both workflows will generate output files as either a matrix (`vsearch`; in `mothur` format) or a long format dataframe (`kraken2`).
 2. The `.sbatch` scripts for both processes should generate the data in formats that are relatively easy for you to handle in Excel, `R`, or `python`. Your are expected to produce sets of visuals (probably stacked barplots), show the taxonomic composition of the sample set according to both our `vsearch` and `kraken2` methods.
 
-# Discussion
+# Results
 
-In your laboratory report, please provide:
+1.  List the names of the tools we used in this exercise and a link to their documentation.
+2.  Report the number of reads in each sample before and after running `fastp`.
+3.  What values did you find for Nonpareil Diversity for each sample?
+4.  How many 16S reads did `vsearch` find for each sample?
+5.  Across the entire dataset, how many total OTUs were detected at least once?
+6.  On average, how many OTUs were detected in the summer samples? Winter samples?
+7.  What percentage of the short reads was `kraken2` able to identify?
+8.  What was the single most abundant species at each time point according to `kraken2`?
+
+Additionally, please provide the following in your lab report:
    
 •	both the `nonpareil` summary table and visualized curves.
   
@@ -138,11 +147,13 @@ In your laboratory report, please provide:
     
 •	a taxonomic profile for the entire dataset based on 16S data or all short reads.
 
-Please respond to the following at the end of your report:
+# Discussion
 
-1.  List the names of the tools we used in this exercise and a link to their documentation.
-2.  Briefly: What is the method `nonpareil` uses to estimate alpha diversity (and a metagenomic samples coverage of it)? What is the method `simka` uses to estimate beta diversity?
-3.  Researchers involved in this study would like to ensure future sequencing runs capture >=75% of the expected nucleotide diversity for both summer and winter samples. What sequencing effort (in GB) would you recommend to accomplish this? Does seasonality have any impact on your suggestions?
-4.  Regardless of which tool(s) you opted to run, what is the difference between the approaches we used with `vsearch` and `kraken2` for generating taxonomic profiles? Would you expect differences in their results?
-6.  Do you observe any trends between the winter and summer samples? What about across years? Please describe your answer and highlight visualizations to support your conclusions, as necessary.  
+Please respond to the following at the end of your report -- feel free to reference your visualizations and the results you reported above to assist you:
+
+1.  What is the method `nonpareil` uses to estimate alpha diversity (and a metagenomic samples coverage of it)? What is the method `simka` uses to estimate beta diversity?
+2.  Researchers involved in this study would like to ensure future sequencing runs capture >=75% of the expected nucleotide diversity for both summer and winter samples. What sequencing effort (in GB) would you recommend to accomplish this? Does seasonality have any impact on your suggestions?
+3.  Briefly compare and contrast our two approaches for taxonomic classification. What are the strengths or weaknesses of each. Would you expect differences in their results? If so, from what?
+4.  A reviewer asks you whether a recently discovered freshwater microbial species is present in your dataset and at what abundance. The new species genome was reported after you submitted your manuscript. Do you think these methods would have detected it? Explain why or why not.
+5.  Do you observe any trends between the winter and summer samples? What about across years? Please describe your answer and highlight visualizations to support your conclusions, as necessary.  
 
