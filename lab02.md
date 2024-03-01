@@ -136,7 +136,7 @@ We would like to create taxonomic profiles for our samples as part of this last 
 4.  How many 16S reads did `vsearch` find for each sample?
 5.  Across the entire dataset, how many total OTUs were detected at least once?
 6.  On average, how many OTUs were detected in the summer samples? Winter samples?
-7.  What percentage of the short reads was `kraken2` able to identify?
+7.  What percentage of the short reads was `kraken2` able to identify in each sample?
 8.  What was the single most abundant species at each time point according to `kraken2`?
 
 Additionally, please provide the following in your lab report:
