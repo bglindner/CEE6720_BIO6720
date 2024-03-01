@@ -123,10 +123,10 @@ sampleC: path/to/sampleC.1.fastq ; path/to/sampleC.2.fastq
 3.  Collect PCA plots from the output folder and transfer them to your local workspace. 
 
 ## **Step 4: Profiling taxonomic composition**
-We would like to create taxonomic profiles for our samples as part of our last step. Below, you have the option of creating profiles using either 16S fragments or all short reads. But you're also welcome to do both and compare the results if you would like.
+We would like to create taxonomic profiles for our samples as part of this last step. Below, we will create taxonomic profiles from either 16S fragments or all short reads. Our approach using all the short reads involves the tool `kraken2` which uses a large whole genome database whereas our 16S approach uses `vsearch` to find reads containing 16S sequences by comparing reads to the `SILVA` (SSU) database. Both of these approaches generate tables which you will need to manage in order to generate visuals.
 
-1. Based on your workflow preference, review the associated script (either `step04_vsearch.sbatch` or `step04_kraken2.sbatch`). Both workflows will generate output files as either a matrix (`vsearch`) or a long format dataframe (`kraken2`).
-2. Process the resulting file and summarize relative abundance at the level of Class for each sample. Create stacked barplots for each sample as part of an associated visual for your lab report.
+1. Review the associated scripts ( `step04_vsearch.sbatch` or `step04_kraken2.sbatch`). Both workflows will generate output files as either a matrix (`vsearch`; in `mothur` format) or a long format dataframe (`kraken2`).
+2. The `.sbatch` scripts for both processes should generate the data in formats that are relatively easy for you to handle in Excel, `R`, or `python`. Your are expected to produce sets of visuals (probably stacked barplots), show the taxonomic composition of the sample set according to both our `vsearch` and `kraken2` methods.
 
 # Discussion
 
