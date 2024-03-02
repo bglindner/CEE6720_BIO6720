@@ -126,7 +126,12 @@ sampleC: path/to/sampleC.1.fastq ; path/to/sampleC.2.fastq
 We would like to create taxonomic profiles for our samples as part of this last step. Below, we will create taxonomic profiles from either 16S fragments or all short reads. Our approach using all the short reads involves the tool `kraken2` which uses a large whole genome database whereas our 16S approach uses `vsearch` to find reads containing 16S sequences by comparing reads to the `SILVA` (SSU) database (akin to "closed or reference-based OTU picking"). Both of these approaches generate tables which you will need to manage in order to generate visuals.
 
 1. Review the associated scripts ( `step04_vsearch.sbatch` or `step04_kraken2.sbatch`). Both workflows will generate output files as either a matrix (`vsearch`; in `mothur` format) or a long format dataframe (`kraken2`).
-2. The `.sbatch` scripts for both processes should generate the data in formats that are relatively easy for you to handle in Excel, `R`, or `python`. Your are expected to produce sets of visuals (probably stacked barplots), show the taxonomic composition of the sample set according to both our `vsearch` and `kraken2` methods.
+2. Combine the outputs from `vsearch`:
+```
+head -1 04_taxonomic_profiles/2010-summer.mothur > 04_taxonomic_profiles/all.mothur
+tail -n 1 04_taxonomic_profiles/*.mothur >> 04_taxonomic_profiles/all.mothur
+```
+4. The `.sbatch` scripts for both processes should generate the data in formats that are relatively easy for you to handle in Excel, `R`, or `python`. Your are expected to produce sets of visuals (probably stacked barplots), show the taxonomic composition of the sample set according to both our `vsearch` and `kraken2` methods.
 
 # Results
 
