@@ -126,13 +126,16 @@ sampleC: path/to/sampleC.1.fastq ; path/to/sampleC.2.fastq
 We would like to create taxonomic profiles for our samples as part of this last step. Below, we will create taxonomic profiles from either 16S fragments or all short reads. Our approach using all the short reads involves the tool `kraken2` which uses a large whole genome database whereas our 16S approach uses `vsearch` to find reads containing 16S sequences by comparing reads to the `SILVA` (SSU) database (akin to "closed or reference-based OTU picking"). Both of these approaches generate tables which you will need to manage in order to generate visuals.
 
 1. Review the associated scripts ( `step04_vsearch.sbatch` or `step04_kraken2.sbatch`). Both workflows will generate output files as either a matrix (`vsearch`; in `mothur` format) or a long format dataframe (`kraken2`).
+
 2. Once all your `vsearch` jobs have finished, you can examine the slurm log to get information on the run. Next, combine the outputs into a single file`:
 ```
 head -1 04_taxonomic_profiles/2010-summer.mothur > 04_taxonomic_profiles/all.mothur
 for file in 04_taxonomic_profiles/*.mothur; do tail -n 1 ${file} >> 04_taxonomic_profiles/all.mothur; done 
 ```
 You have now created a single table representing the OTUs as columns and the samples as rows. From here, you can use the `SILVA_taxonomy_legend.tsv` provided to you in order to ascertain the taxonomy of OTUs. We recommend reading `all.mothur` into into your preferred data visualization platform, adding the taxonomy data from the legend provided and removing columns with all zeroes -- these are OTUs represented in the SILVA database but that were not identified in any of the samples.
+
 4. Once all your `kraken2` jobs have finished, you can examine the slurm log to get information on the run. The tool reports results as a long dataframe, where the first columns represents the relative abundance of that taxonomic group. You can filter this table to specific taxonomic levels (or ranks) by considering column 4.
+
 5. Do your best to prepare visuals summarizing the taxonomic profiles using the results from both tools. Be prepared to compare and contrast their results at the same taxonomic rank. 
 
 
