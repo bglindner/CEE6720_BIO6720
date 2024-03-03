@@ -129,8 +129,11 @@ We would like to create taxonomic profiles for our samples as part of this last 
 
 2. Once all your `vsearch` jobs have finished, you can examine the slurm log to get information on the run. Next, combine the outputs into a single file:
 ```
-head -1 04_taxonomic_profiles/2010-summer.mothur > 04_taxonomic_profiles/all.mothur
-for file in 04_taxonomic_profiles/*.mothur; do tail -n 1 ${file} >> 04_taxonomic_profiles/all.mothur; done 
+head -1 04_taxonomic_profiles/2010-summer.mothur | cut -f 4- > 04_taxonomic_profiles/temp.txt
+for file in 04_taxonomic_profiles/20*.mothur; do tail -n 1 ${file} | cut -f 4- >> 04_taxonomic_profiles/temp.txt; done
+echo "sample" > 04_taxonomic_profiles/index.txt; for file in 04_taxonomic_profiles/20*.mothur; do str=$(basename ${file} | cut -f 1 -d '.'); echo ${str} >> 04_taxonomic_profiles/index.txt; done
+paste 04_taxonomic_profiles/index.txt 04_taxonomic_profiles/temp.txt > 04_taxonomic_profiles/all.mothur
+rm 04_taxonomic_profiles/index.txt 04_taxonomic_profiles/temp.txt
 ```
 2. (cont.) You have now created a single table representing the OTUs as columns and the samples as rows. From here, you can use the `SILVA_taxonomy_legend.tsv` provided to you in order to ascertain the taxonomy of OTUs. We recommend reading `all.mothur` into into your preferred data visualization platform, adding the taxonomy data from the legend provided and removing columns with all zeroes -- these are OTUs represented in the SILVA database but that were not identified in any of the samples.
 
@@ -168,3 +171,33 @@ Please respond to the following at the end of your report -- feel free to refere
 4.  A reviewer asks you whether a recently discovered freshwater microbial species is present in your dataset and at what abundance. The new species genome was reported after you submitted your manuscript. Do you think these methods would have detected it? Explain why or why not.
 5.  Do you observe any trends between the winter and summer samples? What about across years? Please describe your answer and highlight visualizations to support your conclusions, as necessary.  
 
+# Post script and help
+
+Many bioinformatic tools make very large objects that are difficult to work with manually. If you're new to working with large dataframes outside of Excel, consider how `R` or `python` can assist your workflow. For example, we want to strip out the OTUs from our `vsearch` results which weren't detected (or, optionally, which were rare). See the following in `pythons` using the `pandas` package to quickly get your `vsearch` results paired down to just the important stuff:
+```
+df = pd.read_csv("all.mothur", sep="\t",index_col=0,header=0) # read in all.mothur, accepting row and column names
+
+### We should discard OTUs which weren't observed. vsearch reports everything but we just want detected OTUs:
+
+df = df.loc[:, (df.sum(axis=0) > 0)] # overwrite your dataframe, keeping only OTUs which occur at least once
+
+### Consider if you'd like to clean things up further. We could continuing dismissing based on low counts or average. As examples: 
+
+df = df.loc[:, (df.sum(axis=0) > 1)] # overwrite your dataframe, keeping only OTUs which occur at more than once (i.e., non-singletons)
+# or even:
+df = df.loc[:, (df.mean(axis=0) > 5)] # overwrite your dataframe, keeping only OTUs which were counted on average 6+
+
+### let's flag the OTUs we found
+detected_OTUs = df.columns
+
+### load up the information provided for the taxonomy of each OTU:
+tax_legend = pd.read_csv("SILVA_taxonomy_legend.tsv", sep="\t", index_col=0, header=0).T
+### this will make our taxonomic legend much smaller:
+tax_legend = tax_legend[tax_legend.columns.intersection(detected_OTUs)]
+
+### let's sort both just to remain organized if the user wants to view the dataframe
+df = df.reindex(sorted(df.columns), axis=1)
+tax_legend = tax_legend.reindex(sorted(tax_legend.columns), axis=1)
+
+### now everything needed to create visualizations is in these two dataframes!
+```
