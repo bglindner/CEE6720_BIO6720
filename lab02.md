@@ -134,7 +134,7 @@ for file in 04_taxonomic_profiles/*.mothur; do tail -n 1 ${file} >> 04_taxonomic
 ```
 2. (cont.) You have now created a single table representing the OTUs as columns and the samples as rows. From here, you can use the `SILVA_taxonomy_legend.tsv` provided to you in order to ascertain the taxonomy of OTUs. We recommend reading `all.mothur` into into your preferred data visualization platform, adding the taxonomy data from the legend provided and removing columns with all zeroes -- these are OTUs represented in the SILVA database but that were not identified in any of the samples.
 
-3. Once all your `kraken2` jobs have finished, you can examine the slurm log to get information on the run. The workflow uses Kraken2 to do profiling and then cleans up the results with `bracken`. You should have results for species, genus, class, and phylum. You should find the following useful in visualizing your results: https://github.com/rotheconrad/Kraken-Bracken-plot
+3. Once all your `kraken2` jobs have finished, you can examine the slurm log to get information on the run. The workflow uses `kraken2` to do profiling and then cleans up the resulting relative abundances with `bracken`. You should have results for species, genus, class, and phylum -- try to prepare visuals for at least genus and class. You should find the following useful in visualizing your results: https://github.com/rotheconrad/Kraken-Bracken-plot
 
 4. Do your best to prepare visuals summarizing the taxonomic profiles using the results from both tools. Be prepared to compare and contrast their results at the same taxonomic rank (e.g., `vsearch` class to `kraken2` class, etc.)
 
