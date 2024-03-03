@@ -54,7 +54,7 @@ channel_priority: flexible
 # if your command line can't recognize micromamba, try: source ~/.bashrc
 micromamba create -p ~/scratch/lab02/env
 micromamba activate ~/scratch/lab02/env
-micromamba install fastp kraken2 nonpareil simka vsearch matplotlib
+micromamba install fastp kraken2 bracken nonpareil simka vsearch matplotlib
 ```
 5.  You'll want to clean up after installing all of those packges
 ```
