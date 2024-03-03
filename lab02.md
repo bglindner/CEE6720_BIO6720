@@ -173,7 +173,7 @@ Please respond to the following at the end of your report -- feel free to refere
 
 # Post script and help
 
-Many bioinformatic tools make very large objects that are difficult to work with manually. If you're new to working with large dataframes outside of Excel, consider how `R` or `python` can assist your workflow. For example, we want to strip out the OTUs from our `vsearch` results which weren't detected (or, optionally, which were rare). See the following in `pythons` using the `pandas` package to quickly get your `vsearch` results paired down to just the important stuff:
+Many bioinformatic tools make very large objects that are difficult to work with manually. If you're new to working with large dataframes outside of Excel, consider how `R` or `python` can assist your workflow. For example, we want to strip out the OTUs from our `vsearch` results which weren't detected (or, optionally, which were rare). See the following in `python` using the `pandas` package to quickly get your `vsearch` results paired down to just the important stuff for visualizing it more easily:
 ```
 df = pd.read_csv("all.mothur", sep="\t",index_col=0,header=0) # read in all.mothur, accepting row and column names
 
