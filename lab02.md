@@ -81,7 +81,7 @@ path/to/sample2.npo	sample2	color1
 path/to/sample3.npo	sample3	color2
 path/to/sample4.npo	sample4	color2
 ```
-Note: be careful copy+pasting this -- it's better to re-create it yourself so that you know the whitespace is properly formatted as tabs. Keep the header names the same. You can use this opporunity to pick colors for your samples, to color them either individually or by group (i.e. season or year).
+Note: be careful copy+pasting this -- it's better to re-create it yourself so that you know the whitespace is properly formatted as tabs. Keep the header names the same. You can use this opportunity to pick colors for your samples, to color them either individually / by group (i.e. season or year).
 
 3.  Once your nonpareil jobs are finished, we can read our information in to `R`:
 ```
