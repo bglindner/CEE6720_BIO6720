@@ -170,7 +170,7 @@ Please respond to the following at the end of your report -- feel free to refere
 3.  Briefly compare and contrast our two approaches for taxonomic classification. What are the strengths or weaknesses of each. Would you expect differences in their results? If so, from what?
 4.  A reviewer asks you whether a recently discovered freshwater microbial species is present in your dataset and at what abundance. The new species genome was reported after you submitted your manuscript. Do you think these methods would have detected it? Explain why or why not.
 5.  Explain whether the number of species found by Kraken2 and the number of OTUs detected by `vsearch` support your `nonpareil` alpha diversity results. Is there any harmony in these results? If so and by all indicators, what sample type has the greatest species richness?
-6.  Do you observe any trends between the winter and summer samples? What about across years? Please describe your answer and highlight visualizations to support your conclusions, as necessary.  
+6.  Do you observe any other trends between the winter and summer samples? What about across years? Please describe your answer and highlight visualizations to support your conclusions, as necessary.  
 
 # Post script and help
 
