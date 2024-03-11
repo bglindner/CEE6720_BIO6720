@@ -104,8 +104,10 @@ curves= Nonpareil.set(files,colors,labels)
 info = summary.Nonpareil.Set(curves)
 write.csv(info, "nonpareil_results.csv", row.names=FALSE)
 
+pdf("nonpareil_curves.pdf")
 ### write plot to PDF (this will be saved to your workdir as "Rplots.pdf")
 Nonpareil.set(files,colors,labels,plot.opts=list(plot.diversity=FALSE))
+dev.off()
 
 ```
 4.  Transfer both `nonpareil_results.csv` and `nonpareil_curves.pdf` to your local workspace. 
