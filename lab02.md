@@ -173,34 +173,3 @@ Please respond to the following at the end of your report -- feel free to refere
 4.  A reviewer asks you whether a recently discovered freshwater microbial species is present in your dataset and at what abundance. The new species genome was reported after you submitted your manuscript. Do you think these methods would have detected it? Explain why or why not.
 5.  Explain whether the number of species found by Kraken2 and the number of OTUs detected by `vsearch` support your `nonpareil` alpha diversity results. Is there any harmony in these results? If so and by all indicators, what sample type has the greatest species richness?
 6.  Do you observe any other trends between the winter and summer samples? What about across years? Please describe your answer and highlight visualizations to support your conclusions, as necessary.  
-
-# Post script and help
-
-Many bioinformatic tools make very large objects that are difficult to work with manually. If you're new to working with large dataframes outside of Excel, consider how `R` or `python` can assist your workflow. For example, we want to strip out the OTUs from our `vsearch` results which weren't detected (or, optionally, which were rare). See the following in `python` using the `pandas` package to quickly get your `vsearch` results paired down to just the important stuff for visualizing it more easily:
-```
-df = pd.read_csv("all.mothur", sep="\t",index_col=0,header=0) # read in all.mothur, accepting row and column names
-
-### We should discard OTUs which weren't observed. vsearch reports everything but we just want detected OTUs:
-
-df = df.loc[:, (df.sum(axis=0) > 0)] # overwrite your dataframe, keeping only OTUs which occur at least once
-
-### Consider if you'd like to clean things up further. We could continuing dismissing based on low counts or average. As examples: 
-
-df = df.loc[:, (df.sum(axis=0) > 1)] # overwrite your dataframe, keeping only OTUs which occur at more than once (i.e., non-singletons)
-# or even:
-df = df.loc[:, (df.mean(axis=0) > 5)] # overwrite your dataframe, keeping only OTUs which were counted on average 6+
-
-### let's flag the OTUs we found
-detected_OTUs = df.columns
-
-### load up the information provided for the taxonomy of each OTU:
-tax_legend = pd.read_csv("SILVA_taxonomy_legend.tsv", sep="\t", index_col=0, header=0).T
-### this will make our taxonomic legend much smaller:
-tax_legend = tax_legend[tax_legend.columns.intersection(detected_OTUs)]
-
-### let's sort both just to remain organized if the user wants to view the dataframe
-df = df.reindex(sorted(df.columns), axis=1)
-tax_legend = tax_legend.reindex(sorted(tax_legend.columns), axis=1)
-
-### now everything needed to create visualizations is in these two dataframes!
-```
