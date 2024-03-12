@@ -60,8 +60,8 @@ micromamba install fastp spades bakta coverm maxbin2 gtdbtk checkm2 metabat2
 2. Calculate the quality score (Q) of each MAG as Q = Completeness - 5 * Contamination
 3. Remove any MAGs from further analysis with Q < 50
 4. Compare the remaining MAGs all v. all using `fastANI` (recall the tool's matrix option)
-5. For MAGs that match above 95% ANI, select as a representative the MAG with the best Q score and remove the other
-6. Proceed with the remaining MAGs and annotate them with `step04_bakta.sbatch`
+5. For MAGs that match above 95% ANI, select as a representative the better quality MAG while removing the other
+6. Proceed with the remaining MAGs to annotation with `step04_bakta.sbatch`
 
 ## **Step 5: Taxonomic classification** 
 1. Using only the MAGs passing step 4, prepare a batch file like so:
