@@ -60,11 +60,11 @@ cp 03_bins/sewage/*.fa* 03_bins/
 for genome in 03_bins/*.fa*; do str=$(basename ${genome} | cut -f 1-2 -d "."); mv ${genome} 03_bins/${str}.fna; done
 ```
 ## **Step 4: MAG quality control and annotation**
-1. Use `step04_checkm2.sbatch` to prepare a report on the quality of MAGs you retrieved.
+1. Use `step04_checkm2.sbatch` to prepare a report on the quality of MAGs you retrieved (output as: `04_annotations/checkm2/quality_report.tsv`)
 2. Calculate the quality score (Q) of each MAG as Q = Completeness - 5 * Contamination
 3. Remove any MAGs from further analysis with Q < 50
 4. Compare the remaining MAGs all v. all using `fastANI` (recall the tool's matrix option)
-5. For MAGs that match above 95% ANI, select as a representative the better quality MAG while removing the other
+5. For MAGs that match above 95% ANI, select as a representative for the pair whichever MAG has better quality while removing the other
 6. Proceed with the remaining MAGs to annotation with `step04_bakta.sbatch`
 
 ## **Step 5: Taxonomic classification** 
