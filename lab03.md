@@ -36,7 +36,7 @@ In this exercise, we'll be analyzing a timeseries dataset captured during a sewa
 ```
 micromamba clean --all -y
 ```
-4.  Create an environment with the software we need:
+3.  Create an environment with the software we need:
 ```
 # if your command line can't recognize micromamba, try: source ~/.bashrc
 micromamba create -p ~/scratch/lab03/env
