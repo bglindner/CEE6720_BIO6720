@@ -66,7 +66,10 @@ micromamba install fastp spades bakta coverm maxbin2 gtdbtk checkm2 metabat2
 ## **Step 5: Taxonomic classification** 
 1. Using only the MAGs passing step 4, prepare a batch file like so:
 ```
-batch_file
+path/to/genome1.fna   genome1
+path/to/genome2.fna   genome2
+...
+path/to/genomeN.fna   genomeN
 ```
 2. Use `step05.sbatch` to taxonomically classify the MAGs in your batch file.
 
