@@ -81,6 +81,7 @@ path/to/genomeN.fna   genomeN
 1.  List the names of the tools we used in this exercise and a link to their documentation.
 2.  What was the total size of your assembly as reported by `SPAdes`? How many contigs did it contain?
 3.  How many MAGs were reported by `maxbin` and `metabat`? What was the total count of MAGs with Q >= 50? Were there any redundant MAGs?
+4.  What fraction of the assembly was binned into a good quality representative genome (i.e., those passing step 4)?
 5.  Prepare a table summarizing the taxonomic classification of each MAG in your final collection (i.e., those MAGs passing step 4 and input to step 5).
 6.  Prepare a table showing which MAGs appear to contain genes encoding oxidase and catalase. 
 7.  Prepare a visual showing the abundances of each of these MAGs in the `sewage` sample and across the time series samples.
