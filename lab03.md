@@ -49,7 +49,7 @@ micromamba install fastp spades bakta coverm maxbin2 gtdbtk checkm2 metabat2
 
 ## **Step 2: Metagenomic assembly** 
 1.  Use `step02.sbatch` to assemble only the metagenome labelled as `sewage`.
-2.  Be patient, this can take a while!
+2.  This will take at least 2 hours so be sure to get through this step even if you don't plan to immediately proceed further.
 3.  When finished, you should expect to find a FASTA file of the assembly in the output directory called `contigs.fna`. Ensure you have this file before proceeding -- if it's missing, `SPAdes` may have failed so check your log files and react accordingly.
 
 ## **Step 3: Binning for metagenome assembled genomes (MAGs)**
