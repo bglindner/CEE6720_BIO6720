@@ -18,7 +18,7 @@ In this exercise, we'll be analyzing a timeseries dataset captured during a sewa
 
 •	Step 2: Assemble reads with `metaSPAdes`
 
-•	Step 3: Bin data with `MaxBin2`
+•	Step 3: Bin data with `maxbin` and `metabat`
 
 •	Step 4: Check and annotate bins 
 
