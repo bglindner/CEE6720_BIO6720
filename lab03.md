@@ -88,7 +88,7 @@ path/to/genomeN.fna   genomeN
 # Discussion
 
 1.  Why did we use two different binning software in this exercise? Explain what is meant by MAG dereplication and how we accomplished this in our exercise.
-2.  What is a "single copy marker gene" in the context of measuring genome completeness and contamination? Can you provide examples of these genes?
+2.  Define "single copy marker genes" in the context of measuring genome completeness and contamination. Provide examples of these types of genes.
 3.  What taxonomic database did we classify our MAGs with? What gene database(s) did `bakta` use for annotating our genomes?
 4.  Approximately how long does it take for the total sewage-associated signal to fade in the time series?
 5.  Did the populations represented by your MAGs share similar decay patterns? If they were different, hypothesize why that might be.
