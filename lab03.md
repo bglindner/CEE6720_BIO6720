@@ -87,4 +87,6 @@ path/to/genomeN.fna   genomeN
 
 # Discussion
 
-Under construction
+1.  Approximately how long does it take for the sewage-associated signal to fade in the time series?
+2.  Did the populations represented by your MAGs share similar decay patterns? If they were different, hypothesize why that might be. 
+3.  Do any of the MAGs carry antimicrobial resistance genes? If so, which types of AMR genes do they carry and what is the persistence of those AMR-carrying populations in the environment?
