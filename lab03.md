@@ -73,7 +73,7 @@ path/to/genomeN.fna   genomeN
 ```
 2. Use `step05.sbatch` to taxonomically classify the MAGs in your batch file.
 
-## **Step 6: In situ abundance**
+## **Step 6: Calculate relative abundances**
 1. Use `step06.sbatch` to calculate the abundance of your MAGs across the dataset.
    
 # Results
