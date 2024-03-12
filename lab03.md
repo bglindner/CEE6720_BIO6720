@@ -63,14 +63,14 @@ micromamba install fastp spades bakta coverm maxbin2 gtdbtk checkm2 metabat2
 5. For MAGs that match above 95% ANI, select as a representative the MAG with the best Q score and remove the other
 6. Proceed with the remaining MAGs and annotate them with `step04_bakta.sbatch`
 
-## **Step 5: Taxonomic classification ** 
+## **Step 5: Taxonomic classification** 
 1. Using only the MAGs passing step 4, prepare a batch file like so:
 ```
 batch_file
 ```
 2. Use `step05.sbatch` to taxonomically classify the MAGs in your batch file.
 
-## **Step 6: In situ abundance ***
+## **Step 6: In situ abundance**
 1. Use `step06.sbatch` to calculate the abundance of your MAGs across the dataset.
    
 # Results
