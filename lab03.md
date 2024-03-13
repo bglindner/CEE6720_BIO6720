@@ -45,7 +45,8 @@ micromamba clean --all -y
 # if your command line can't recognize micromamba, try: source ~/.bashrc
 micromamba create -p ~/scratch/lab03/env
 micromamba activate ~/scratch/lab03/env
-micromamba install fastp spades bakta coverm maxbin2 gtdbtk checkm2 metabat2
+micromamba install fastp spades coverm maxbin2 gtdbtk checkm2 metabat2
+micromamba install bakta=1.9.3
 ```
 
 ## **Step 1: Read trimming** 
