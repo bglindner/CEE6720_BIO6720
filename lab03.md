@@ -68,15 +68,16 @@ for genome in 03_bins/sewage[ABC]/*.fa*; do sample=$(echo ${genome} | cut -f 2 -
 3. Remove any MAGs from further analysis with Q < 50
 4. Compare the remaining MAGs all v. all using `fastANI` (recall the tool's matrix option)
 5. For MAGs that match above 95% ANI, select as a representative for the pair whichever MAG has better quality while removing the other
-6. Proceed with the remaining MAGs to annotation with `step04_bakta.sbatch`
+6. Create a new directory in `03_bins` with `mkdir 03_bins/good_bins/` and place copies of each MAG that passed QC there.
+7. Annotate each of the MAGs that passed QC (which have now been placed on `03_bins/good_bins` with `step04_bakta.sbatch`
 
 ## **Step 5: Taxonomic classification** 
-1. Using only the MAGs passing step 4, prepare a batch file like so:
+1. Using only the MAGs in `03_bins/good_bins`, prepare a batch file like so:
 ```
-path/to/genome1.fna   genome1
-path/to/genome2.fna   genome2
+path/to/good_bins/genome1.fna   genome1
+path/to/good_bins/genome2.fna   genome2
 ...
-path/to/genomeN.fna   genomeN
+path/to/good_bins/genomeN.fna   genomeN
 ```
 2. Use `step05.sbatch` to taxonomically classify the MAGs in your batch file.
 
