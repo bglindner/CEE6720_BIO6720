@@ -16,6 +16,8 @@ In this exercise we will learn to build a (16S) phylogenetic tree and how to ide
 
 •	Step 4: Find whole genomes matching each of the given 16S rRNA gene sequences.
 
+•	Step 5: mcr tree construction.
+
 
 # Instructions:
 
@@ -48,10 +50,10 @@ micromamba install -c bioconda pyrodigal
 ## **Step 4: Whole genome collection** 
 1.  For each 16S rRNA gene provided, find 1 whole genome sequence ("complete" level not "contig" or "scaffold") on NCBI that carries a matching 16S rRNA gene (100% identity).
 2.  Download these 10 whole genomes and be sure to track which genome belongs to which 16S sequence.
-3.  Examine which of these 10 genomes also contain the `mcr` operon using a method of your choice. 
+3.  Examine which of these 10 genomes also contain the *mcr* operon using a method of your choice. 
 
 ## **Step 5: mcr gene tree** 
-1.  Extract each of the `mcr` operons from each genome encoding it and build a gene tree using the method of your choice.
+1.  Extract each of the *mcr* operons from each genome encoding it and build a gene tree using the method of your choice.
 
 
 # Results
@@ -60,5 +62,5 @@ micromamba install -c bioconda pyrodigal
 2.  For each 16S sequence you classified in step 1, provide a summary of the ecological or biotechnological importance of that genus or species.
 3.  Compare and contrast the 3 16S rRNA gene trees you constructed. Do their topologies differ? Did you note differences in computational time for their construct? Do you observe any patterns in bootstrap values?
 4.  Summarize your annotation of the fosmid sequence. How many coding sequences do you predict? What are their functions? Did your annotation efforts uncover an pseudogenes on the fosmid sequence?
-5.  For the 10 whole genome representatives you selected as representatives for each of the 10 16S rRNA sequences, which encoded `mcr`? Report the amino acid identity of these `mcr` operons to the `mcr` operon encoded on the fosmid.
-6.  Compare the tree you constructed in step 5 to the tree of your choice from step 1. How might these results inform researchers about the occurence of horizontal gene transfer of the `mcr` operon?
+5.  For the 10 whole genome representatives you selected as representatives for each of the 10 16S rRNA sequences, which encoded *mcr*? Report the amino acid identity of these *mcr* operons to the `mcr` operon encoded on the fosmid.
+6.  Compare the tree you constructed in step 5 to the tree of your choice from step 1. How might these results inform researchers about the occurence of horizontal gene transfer of the *mcr* operon?
