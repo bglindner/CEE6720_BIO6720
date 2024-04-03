@@ -29,8 +29,16 @@ In this exercise we will learn to build a (16S) phylogenetic tree and how to ide
 1.  Copy the 16S rRNA sequences provided in `~/shared/lab04`
 2.  Use SILVA's online `sequence search` webtool to classify each of the 10 16S sequences provided (https://www.arb-silva.de/aligner/).
 3.  Find the genus (and species, if possible) associated with each sequence.
-4.  Construct phylogenetic trees using the provided 16S sequences either with SILVA's online treebuilding tool (see link in step 2), `phylip` (available as a module on ICE), or another tree building tool of your choice.
-5.  Gather one tree for each of the following methods with a minimum of 100 bootstraps each: distance, parsimony, and maximum like. Visualize these trees with labels for the underlying method and the bootstrap support for each node.
+4.  Construct phylogenetic trees using the provided 16S sequences either with SILVA's online treebuilding tool (see link in step 2), `phylip`, MEGA (on your local workspace), or any other tree building tool of your choice (e.g., `FastTree`).
+NOTE: If you elect to use `phylip`, you need to store the directory containing its executables like so:
+`phylip="/storage/ice-shared/cee6720/00_software/phylip/phylip-3.697/exe"`
+And then you can call them like so:
+```
+${phylip}/dnadist
+${phylip}/dnaml
+```
+You are not required to use `phylip` in this exercise but it is provided to you because we have not introduced a tree building tool hitherto.
+6.  Gather one tree for each of the following methods with a minimum of 100 bootstraps each: distance, parsimony, and maximum like. Visualize these trees with labels for the underlying method and the bootstrap support for each node.
 
 ## **Step 2: Fosmid gene prediction** 
 1.  Copy the fosmid sequence prodiced in `~/shared/lab04`
