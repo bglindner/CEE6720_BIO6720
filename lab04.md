@@ -58,6 +58,7 @@ micromamba install -c bioconda pyrodigal
 ## **Step 3: Fosmid gene annotation** 
 1.  Using the tool of your choice, annotate the predicted genes of the fosmid sequence. If doing so with webtools, consider UniProt or NCBI as discussed in class. If using the command line, consider `bakta` from the previous exercise which will automate all steps -- you can examine its tabular output (`.tsv`) to find a good summary of this information.
 2.  Report all annotations. Most importantly, identify a metal reducing operon (*mcr*), report its location in the sequence and the operon's length.
+3.  Ensure your annotations are properly formatted for visualization with Artemis (http://sanger-pathogens.github.io/Artemis/Artemis/). If you use `bakta`, it will automatically generate Artemis-readable files.
 
 ## **Step 4: Whole genome collection** 
 1.  For each 16S rRNA gene provided, find 1 whole genome sequence ("complete" level not "contig" or "scaffold") on NCBI that carries a matching 16S rRNA gene (100% identity).
