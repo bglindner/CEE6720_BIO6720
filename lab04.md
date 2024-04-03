@@ -74,6 +74,6 @@ micromamba install -c bioconda pyrodigal
 1.  This exercise is more open-ended than previous ones. Please summarize here what methods you used to accomplish each step. 
 2.  For each 16S sequence you classified in step 1, provide a summary of the ecological or biotechnological importance of that genus or species.
 3.  Compare and contrast the 3 16S rRNA gene trees you constructed. Do their topologies differ? Did you note differences in computational time for their construct? Do you observe any patterns in bootstrap values?
-4.  Summarize your annotation of the fosmid sequence. How many coding sequences do you predict? What are their functions? Did your annotation efforts uncover an pseudogenes on the fosmid sequence?
+4.  Summarize your annotation of the fosmid sequence. How many coding sequences do you predict? What are their functions? Did your annotation efforts uncover an pseudogenes on the fosmid sequence? Provide a screenshot of your gene annotations in Artemis.
 5.  For the 10 whole genome representatives you selected as representatives for each of the 10 16S rRNA sequences, which encoded *mcr*? Report the amino acid identity of these *mcr* operons to the `mcr` operon encoded on the fosmid.
 6.  Compare the tree you constructed in step 5 to the tree of your choice from step 1. How might these results inform researchers about the occurence of horizontal gene transfer of the *mcr* operon?
