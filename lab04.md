@@ -31,9 +31,11 @@ In this exercise we will learn to build a (16S) phylogenetic tree and how to ide
 3.  Find the genus (and species, if possible) associated with each sequence.
 4.  Construct phylogenetic trees using the provided 16S sequences either with SILVA's online treebuilding tool (see link in step 2), `phylip`, MEGA (on your local workspace), or any other tree building tool of your choice (e.g., `FastTree`).
 
-NOTE: If you elect to use `phylip`, you need to store the directory containing its executables like so:
+NOTE: If you elect to use `phylip`, you can store the directory containing its executables as a variable like so:
+
 `phylip="/storage/ice-shared/cee6720/00_software/phylip/phylip-3.697/exe"`
-And then you can call them like so:
+
+And then you can call them:
 ```
 ${phylip}/dnadist
 ${phylip}/dnaml
