@@ -41,7 +41,8 @@ ${phylip}/dnadist
 ${phylip}/dnaml
 ```
 You are not required to use `phylip` in this exercise but it is provided to you because we have not introduced a tree building tool hitherto.
-6.  Gather one tree for each of the following methods with a minimum of 100 bootstraps each: distance, parsimony, and maximum like. Visualize these trees with labels for the underlying method and the bootstrap support for each node.
+
+5.  Gather one tree for each of the following methods with a minimum of 100 bootstraps each: distance, parsimony, and maximum like. Visualize these trees with labels for the underlying method and the bootstrap support for each node.
 
 ## **Step 2: Fosmid gene prediction** 
 1.  Copy the fosmid sequence prodiced in `~/shared/lab04`
