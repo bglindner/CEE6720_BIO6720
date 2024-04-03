@@ -29,7 +29,7 @@ In this exercise we will learn to build a (16S) phylogenetic tree and how to ide
 1.  Copy the 16S rRNA sequences provided in `~/shared/lab04`
 2.  Use SILVA's online `sequence search` webtool to classify each of the 10 16S sequences provided (https://www.arb-silva.de/aligner/).
 3.  Find the genus (and species, if possible) associated with each sequence.
-4.  Construct phylogenetic trees using the provided 16S sequences either with SILVA's online treebuilding tool (see link in step 2), `phylip`, MEGA (on your local workspace), or any other tree building tool of your choice (e.g., `FastTree`).
+4.  Construct phylogenetic trees using the provided 16S sequences either with SILVA's online treebuilding tool (see link in step 2), `phylip`, MEGA (on your local workspace), or any other better tree building tool of your choice (e.g., `IQ-TREE`, `FastTree`).
 
 NOTE: If you elect to use `phylip`, you can store the directory containing its executables as a variable like so:
 
