@@ -16,7 +16,7 @@ In this exercise we will learn to build a (16S) phylogenetic tree and how to ide
 
 •	Step 4: Find whole genomes matching each of the given 16S rRNA gene sequences.
 
-•	Step 5: mcr tree construction.
+•	Step 5: mtr tree construction.
 
 
 # Instructions:
